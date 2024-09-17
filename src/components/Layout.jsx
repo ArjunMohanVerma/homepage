@@ -17,15 +17,16 @@ const Layout = () =>{
         <>
             <Container className="Top-Header" fluid>
                 <Row className="h-100 d-none d-lg-flex ">
-                    <Col className="Top-Header-Content col-5 d-flex justify-content-start align-items-center">
+                <Col className="Top-Header-Content col-2">
+                        <img src={logo} style={{height: "100px", width: "185px", padding: "0 1rem", marginTop: "5px"}} alt=''/>    
+                    </Col>
+                    <Col className="Top-Header-Content col-5 d-flex justify-content-end align-items-center">
                         <CustomLink to='/' onClick={ () => handleClick()}>Home</CustomLink>
                         <CustomLink to='/about' onClick={ () => handleClick()}>About Us</CustomLink>
                         <CustomLink to='/service' onClick={ () => handleClick()}>Services</CustomLink>
                     </Col>
-                    <Col className="Top-Header-Content col-2">
-                        <img src={logo} style={{height: "100px", width: "185px", padding: "0 1rem", marginTop: "5px"}} alt=''/>    
-                    </Col>
-                    <Col className="Top-Header-Content col-5 d-flex justify-content-end align-items-center">
+                    
+                    <Col className="Top-Header-Content col-5 d-flex justify-content-start align-items-center">
                         <CustomLink to='posts/' onClick={ () => handleClick()}>Blogs</CustomLink>
                         <CustomLink to='/posts' onClick={ () => handleClick()}>Login/SignUp</CustomLink>
                         <CustomLink to='/about' onClick={ () => handleClick()}>Contact Us</CustomLink>

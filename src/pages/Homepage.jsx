@@ -1,6 +1,9 @@
 import { Container, Row, Col, Button, Form, Accordion } from 'react-bootstrap';
 import { useState} from "react";
 import { Link } from "react-router-dom";
+import { MDBAccordion, MDBAccordionItem, MDBContainer } from "mdb-react-ui-kit";
+import {InstagramLogo} from "phosphor-react";
+import {YoutubeLogo, FacebookLogo} from "phosphor-react";
 
 import InputMask from 'react-input-mask';
 import "../css/Homepage.css";
@@ -8,13 +11,14 @@ import "../css/Homepage.css";
 // Components
 import { Teampage } from './Teampage';
 import { Slider } from '../components/Slider';
-import { ServiceComponent } from '../components/ServiceComponent';
+
 import { AboutComponent } from '../components/AboutComponent';
 import { useAuth } from "../hook/useAuth";
 import { SwiperComponent } from '../components/SwiperComponent';
 import { SwiperInstagram } from '../components/SwiperInstagram';
 
 const Homepage = () =>{
+
 
     const { serviceData, employeeData, setMail, mail, sendMail} = useAuth();
 
@@ -56,20 +60,42 @@ const Homepage = () =>{
     return (
         <>  
             <Slider />
+            <SwiperComponent />
             <AboutComponent />
-            <ServiceComponent />
             <Teampage />
 
 
             <Container className='mb-20'>
                 <Row className='h-10'>
+
                     <Col className='Header text-center'>
-                        <h2 className="decorated"><span>Ask Questions</span></h2>      
+                        <h2 className="decorated"><span>Have Questions?</span></h2>      
                     </Col>
                 </Row>
-                <Accordion>
+
+                <MDBContainer className="mt-5" style={{maxWidth: '1000px'}}>
+                <MDBAccordion alwaysOpen initialActive={1}>
+                <MDBAccordionItem collapseId={1} headerTitle="What is STKT Beauty and Technology Pvt Ltd?">
+                <strong>STKT Beauty and Technology</strong> Pvt Ltd is a pioneering company that merges cutting-edge technology with the beauty industry. We specialize in creating innovative tech solutions to enhance beauty services, streamline salon operations, and elevate the overall customer experience. 
+                </MDBAccordionItem>
+                <MDBAccordionItem collapseId={2} headerTitle="What services does STKT Beauty and Technology Pvt Ltd offer?">
+                We offer a range of services including the development of advanced beauty management software, mobile applications for salon bookings, and technology-driven beauty solutions. We aim to empower beauty professionals with the tools they need to provide exceptional services and improve business efficiency.
+                </MDBAccordionItem>
+                <MDBAccordionItem collapseId={3} headerTitle="How does STKT’s technology benefit beauty salons?">
+                Our technology helps beauty salons by automating appointment scheduling, managing customer records, and streamlining payment processes. This allows salons to focus more on providing high-quality services while our solutions handle the administrative tasks.
+                </MDBAccordionItem>
+                <MDBAccordionItem collapseId={4} headerTitle="What makes STKT different from other beauty tech companies?">
+                <strong>STKT</strong> stands out by combining in-depth industry knowledge with advanced technology. Our solutions are tailored specifically for the beauty industry, ensuring they meet the unique needs of beauty professionals and their clients. We focus on delivering user-friendly, reliable, and innovative products that drive real results.
+                </MDBAccordionItem>
+                <MDBAccordionItem collapseId={5} headerTitle="How can beauty professionals get in touch with STKT for collaboration or inquiries?">
+                Beauty professionals interested in collaborating with us or seeking more information can contact us through our website or email us at <strong>suppot@vyleesalon.in</strong>. We’re always excited to explore new partnerships and opportunities.
+                </MDBAccordionItem>
+            </MDBAccordion>
+            </MDBContainer>
+
+                {/* <Accordion>
                 {
-                    serviceData.filter(item => item.category_id == 11472068).map( training => (
+                    questions.filter(item => item.category_id == 11472068).map( training => (
                         <Accordion.Item key={training.id} eventKey={training.id}>
                             <Accordion.Header>{training.title}</Accordion.Header>
                             <Accordion.Body>
@@ -80,17 +106,17 @@ const Homepage = () =>{
                         </Accordion.Item>
                     ))
                 }
-                </Accordion>
+                </Accordion> */}
                 <Row className='justify-content-center text-center'>
                     <Col className='mb-3 mt-3'>
                         <Link to={`/training`}>
-                            <Button size="lg" variant="primary">Contact for More Details </Button>{' '}
+                            <Button size="lg" variant="primary">Contact us for More Details </Button>{' '}
                         </Link>
                     </Col>
                 </Row>
             </Container>
 
-            <SwiperComponent />
+            
 
 
             {/* <Container className='mb-20' fluid>
@@ -113,7 +139,7 @@ const Homepage = () =>{
             <Container className='News mb-20' fluid>
                 <Row className='h-10'>
                         <Col className='News-Header text-center'>
-                            <h2 className="decorated-white"><span>We are on Social Media!</span></h2>    
+                            <h2 className="decorated-white"><span>Follow us on Social Media!</span></h2>    
                         </Col>
                     </Row>
 
@@ -121,7 +147,22 @@ const Homepage = () =>{
 
                     <Row className='justify-content-center text-center'>
                         <Col className='mb-5 pt-4'>
-                                <Button href="https://www.instagram.com/vylee.in/" size="lg" variant="primary" target="_blank">Follow us on Instagram!</Button>{' '}
+                                <Button href="https://www.instagram.com/vylee.in/" size="lg" variant="primary" target="_blank">
+                                <InstagramLogo size={32} color={"white"}> 
+                                </InstagramLogo>
+                                </Button>{' '}
+                        </Col>
+                        <Col className='mb-5 pt-4'>
+                                <Button href="https://www.facebook.com/people/VYLEE/61561414439963/" size="lg" variant="primary" target="_blank">
+                                <FacebookLogo size={34} color={"white"}> 
+                                </FacebookLogo>
+                                </Button>{' '}
+                        </Col>
+                        <Col className='mb-5 pt-4'>
+                                <Button href="https://www.youtube.com/@STKTBeautyandTechnology" size="lg" variant="primary" target="_blank">
+                                <YoutubeLogo size={32} color={"white"}> 
+                                </YoutubeLogo>
+                                </Button>{' '}
                         </Col>
                     </Row>
             </Container>
@@ -134,13 +175,13 @@ const Homepage = () =>{
                 </Row>
                 <Row className='d-flex flex-column flex-md-row justify-content-center h-100'>
                     <Col className='col-12 col-md-4 d-flex flex-column d-md-block align-items-center align-items-md-start col-lg-5 col-xxl-4'>
-                        <Col className='Contacts-header text-center'>Our Address</Col>
+                        <Col className='Contacts-header text-left'><b>Our Address:</b></Col>
                         <Col className='Contacts-header mt-3'>
                             <p>STKT BEAUTY AND TECHNOLOGY PVT LTD</p>
                             <p>FF-229, FIRST FLOOR, TOWER A ANSAL API, PALAM</p>
                             <p>CORPORATE PLAZA, GURUGRAM, HARYANA 122017</p>
                             <p>PHONE:9319375444</p>
-                            <p>EMAIL: SUPPORT@VYLEESALON.IN</p>
+                            <p>EMAIL: support@vyleesalon.in</p>
                         </Col>
                     </Col>
                     <Col className='Contacts-Form col-12 col-md-6 col-xxl-4'>

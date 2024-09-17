@@ -19,7 +19,7 @@ const Slider = () =>{
                     autoPlay
                     muted
                     loading="lazy"
-                    alt="Кератин, Ботокс, Нанопластика волос, Реконструкция волос Могилев"
+                    alt="video1"
                     ></video>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -31,7 +31,7 @@ const Slider = () =>{
                     autoPlay
                     muted
                     loading="lazy"
-                    alt="Парикмахерская Могилев"
+                    alt="video2"
                     ></video>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -43,7 +43,7 @@ const Slider = () =>{
                     autoPlay
                     muted
                     loading="lazy"
-                    alt="Салон красоты Могилев"
+                    alt="video3"
                     ></video>
                 </Carousel.Item>
                 </Carousel>

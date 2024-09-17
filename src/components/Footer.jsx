@@ -2,6 +2,7 @@ import { Container, Row, Col} from 'react-bootstrap';
 import '../css/Footer.css';
 import { CustomLink } from './CustomLink';
 import {InstagramLogo} from "phosphor-react";
+import {YoutubeLogo, FacebookLogo} from "phosphor-react";
 import logo from '../pages/img/white-and-black.png';
 
 const Footer = () =>{
@@ -37,11 +38,21 @@ const Footer = () =>{
                     </Col>
 
                     <Col className='Footer-Subscribe col-6 col-md-3'>
-                       <h4>Follow us on Instagram!</h4>
+                       <h4>Follow us on!</h4>
                        <Col className='d-flex text-align-center justify-content-center justify-content-md-start align-content-center'>
                             <InstagramLogo size={32} color={"white"}> 
                             </InstagramLogo>
-                            <a href="https://www.instagram.com/vylee.in/" className='align-self-center' target="_blank">Vylee.in</a>
+                            <a href="https://www.instagram.com/vylee.in/" className='align-self-center' target="_blank">Vylee-Instagram</a>
+                       </Col><br/>
+                       <Col className='d-flex text-align-center justify-content-center justify-content-md-start align-content-center'>
+                            <YoutubeLogo size={32} color={"white"}> 
+                            </YoutubeLogo>
+                            <a href="https://www.youtube.com/@STKTBeautyandTechnology" className='align-self-center' target="_blank">Vylee-Youtube</a>
+                       </Col><br/>
+                       <Col className='d-flex text-align-center justify-content-center justify-content-md-start align-content-center'>
+                            <FacebookLogo size={32} color={"white"}> 
+                            </FacebookLogo>
+                            <a href="https://www.facebook.com/people/VYLEE/61561414439963/" className='align-self-center' target="_blank">Vylee-Facebook</a>
                        </Col>
                     </Col>
                 </Row>
